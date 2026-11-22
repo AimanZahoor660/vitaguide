@@ -1,4 +1,7 @@
 {
+  "framework": null,
+  "installCommand": null,
+  "buildCommand": null,
   "outputDirectory": "frontend",
   "functions": {
     "api/tips.js": { "maxDuration": 60 }
