@@ -1,0 +1,6 @@
+{
+  "outputDirectory": "frontend",
+  "functions": {
+    "api/tips.js": { "maxDuration": 60 }
+  }
+}

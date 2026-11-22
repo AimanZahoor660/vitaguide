@@ -1,3 +1,7 @@
+const isLocal =
+  ["localhost", "127.0.0.1", ""].includes(location.hostname);
+const API_URL = isLocal ? "http://localhost:5000/api/tips" : "/api/tips";
+
 const form = document.getElementById("tipsForm");
 const submitBtn = document.getElementById("submitBtn");
 const message = document.getElementById("message");
@@ -148,7 +152,7 @@ async function getTips(data) {
   document.getElementById("regenBtn").disabled = true;
 
   try {
-    const res = await fetch("http://localhost:5000/api/tips", {
+    const res = await fetch(API_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
