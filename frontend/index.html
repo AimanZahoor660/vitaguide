@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VitaGuide | AI Wellness Tips</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="header">
+    <button id="themeBtn" class="theme-btn" type="button">🌙 Dark</button>
+    <h1>VitaGuide</h1>
+    <p>Your personal wellness guide, made for Pakistan.</p>
+  </header>
+
+  <main class="container">
+
+    <section class="card">
+      <h2>Tell us about yourself</h2>
+
+      <form id="tipsForm">
+        <div class="row">
+          <div class="field">
+            <label for="name">Name (optional)</label>
+            <input type="text" id="name" maxlength="30" />
+          </div>
+          <div class="field">
+            <label for="language">Language</label>
+            <select id="language">
+              <option value="English">English</option>
+              <option value="Roman Urdu">Roman Urdu</option>
+              <option value="Urdu">اردو (Urdu)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="age">Age</label>
+            <input type="number" id="age" min="10" max="100" required />
+          </div>
+          <div class="field">
+            <label for="gender">Gender</label>
+            <select id="gender" required>
+              <option value="female">Female</option>
+              <option value="male">Male</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="height">Height (cm)</label>
+            <input type="number" id="height" min="100" max="250" required />
+          </div>
+          <div class="field">
+            <label for="weight">Weight (kg)</label>
+            <input type="number" id="weight" min="25" max="250" required />
+          </div>
+        </div>
+
+        <div id="bmiBox" class="bmi-box hidden"></div>
+
+        <div class="row">
+          <div class="field">
+            <label for="work">Daily routine</label>
+            <select id="work" required>
+              <option value="student">Student</option>
+              <option value="desk job (sitting most of the day)">Desk job</option>
+              <option value="active job (on feet)">Active job</option>
+              <option value="home maker">Home maker</option>
+              <option value="work from home">Work from home</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="activity">Activity level</label>
+            <select id="activity" required>
+              <option value="low">Low</option>
+              <option value="moderate" selected>Moderate</option>
+              <option value="high">High</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="goal">Your goal</label>
+            <select id="goal" required>
+              <option value="general fitness">General fitness</option>
+              <option value="weight loss">Weight loss</option>
+              <option value="muscle gain">Muscle gain</option>
+              <option value="better sleep">Better sleep</option>
+              <option value="stress reduction">Stress reduction</option>
+              <option value="more energy">More energy</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="diet">Diet preference</label>
+            <select id="diet" required>
+              <option value="no restriction">No restriction</option>
+              <option value="vegetarian">Vegetarian</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="field">
+            <label for="sleep">Sleep (hours per night)</label>
+            <input type="number" id="sleep" min="1" max="14" required />
+          </div>
+          <div class="field">
+            <label for="water">Water (glasses per day)</label>
+            <input type="number" id="water" min="0" max="30" required />
+          </div>
+        </div>
+
+        <button type="submit" id="submitBtn">Get My Tips</button>
+      </form>
+    </section>
+
+    <p id="message" class="message"></p>
+
+    <section id="output" class="hidden">
+      <div id="summary" class="summary-card"></div>
+      <div id="stats" class="stats"></div>
+      <div id="results" class="results"></div>
+      <div id="mealPlan"></div>
+      <div id="extras"></div>
+
+      <div class="actions no-print">
+        <button type="button" id="regenBtn" class="secondary">🔄 New Tips</button>
+        <button type="button" id="copyBtn" class="secondary">📋 Copy</button>
+        <button type="button" id="printBtn" class="secondary">🖨️ Print / PDF</button>
+      </div>
+    </section>
+
+    <section id="historySection" class="card hidden no-print">
+      <div class="history-head">
+        <h2>Previous results</h2>
+        <button type="button" id="clearHistory" class="link-btn">Clear</button>
+      </div>
+      <ul id="historyList" class="history-list"></ul>
+    </section>
+
+    <p class="disclaimer">
+      This is general wellness information, not medical advice. For any health
+      problem, please consult a doctor. Calorie and BMI numbers are rough estimates.
+    </p>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
